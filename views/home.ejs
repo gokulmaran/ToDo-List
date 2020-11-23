@@ -7,6 +7,44 @@
     <title><%=title%></title>
 </head>
 <body>
-    <h1>TOD APP</h1>
+     <h1>TODO App</h1>
+    <form action="/add-task" method="GET">
+        <label for="description">Decrpition</label>
+        <br>
+        <input type="text" name="description" placeholder="what you want to do ??">
+        <div id="category-date">
+            <div id="category">
+                <label for="category">Category</label><br>
+                <select id="category1" name="category" required>
+                    <option value="public">public</option>
+                    <option value="personal">personal</option>
+                    <option value="work">work</option>
+                    <option value="school">school</option>
+                    <option value="Home">cleaning</option>
+                </select>
+        </div>
+        <label for="date">Due Date</label>
+        <br>
+        <input type="date" name="date">
+        <br>
+        <input type="submit" value="ADD Task">
+    </form>
+    <div id="tasks-list">
+        <ul>
+    <% for(var i of todo){%>
+        <h1><%=i.task%></h1>
+        <h2><%= i.date%></h2>
+        <h2><%= i.category%></h2>
+
+    </div>
+        <div class="delete-button">
+            <input type="submit" value="Delete">
+            <a href="/delete-task/?id=<%=i._id %>">
+                <i class="fas fa-window-close"></i>
+            </a>
+        </div>
+        <h2>**********************************************************</h2>
+    <%}%>
+    </ul>
 </body>
 </html>

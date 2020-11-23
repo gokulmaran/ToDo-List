@@ -1,4 +1,15 @@
+body{
+    text-align:center;
+}
+*{
+    margin: 5px;
+}
+#action{
+    height:200px;
+    width:200px;
+    background-color:black;
+}
 h1{
-    color: purple;
-    font-size: 100px;
+    color: black;
+    font-size: 40px;
 }
